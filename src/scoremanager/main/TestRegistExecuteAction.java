@@ -46,7 +46,7 @@ public class TestRegistExecuteAction extends Action {
 		Subject subject = subjectDao.get(subjectCd, school);
 
 	// 成績データ保存※1人ずつ登録処理を実行
-		// 学生情報を1人ずつ取得し全件走査
+		// 学生情報を1人ずつ取得し全件走査(拡張for文)
 		for (String studentNo : studentNoSet) {
 			// 成績インスタンスを初期化
 			Test test = new Test();
@@ -79,6 +79,6 @@ public class TestRegistExecuteAction extends Action {
 		testDao.save(gradeList);
 
 		// 完了ページにフォワード
-		req.getRequestDispatcher("test_regist_done.jsp").forward(req, res);
+		req.getRequestDispatcher("test_regist_done.jsp").forward(req,res);
 	}
 }
