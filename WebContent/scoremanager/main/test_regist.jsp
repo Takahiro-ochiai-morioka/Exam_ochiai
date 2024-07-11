@@ -65,7 +65,7 @@
 		<form action="TestRegistExecute.action" method="post">
 			<c:choose>
 				<c:when test="${tests.size()>0}">
-					<div><h2>科目：${subject} (${num}回)</h2></div>
+					<div><h2>科目：${subject.name} (${num}回)</h2></div>
 					<table class="table table-hover">
 						<tr>
 							<th>入学年度</th>
@@ -86,12 +86,8 @@
 							<input type="hidden" name="student_no_set[]" value="${test.student.no}"/>
 						</c:forEach>
 					</table>
-					<input type="hidden" id="test-subject_cd-hidden" name="subject_cd" value="${subject.cd}"/>
-					<input type="hidden" id="test-num-hidden" name="num" value="${num}" />
-					<input type="hidden" id="test-f1-hidden" name="f1" value="${f1}" />
-					<input type="hidden" id="test-f2-hidden" name="f2" value="${f2}" />
-					<input type="hidden" id="test-f3-hidden" name="f3" value="${f3}" />
-					<input type="hidden" id="test-f4-hidden" name="f4" value="${f4}" />
+					<input type="hidden" name="subject_cd" value="${subject.cd}"/>
+					<input type="hidden" name="num" value="${num}" />
 					<input type="submit" value="登録して終了">
 				</c:when>
 				<c:otherwise>

@@ -79,7 +79,7 @@ public class TestRegistAction extends Action {
 					// リクエストに回数をセット設定
 					req.setAttribute("num", num);
 					// リクエストに科目を設定
-					req.setAttribute("subject", subject_set.getName());
+					req.setAttribute("subject", subject_set);//7/11修正
 					// リクエストに成績を設定
 					req.setAttribute("tests", tests);
 
@@ -97,6 +97,6 @@ public class TestRegistAction extends Action {
 				}
 			}
 	//JSPへフォワード
-		req.getRequestDispatcher("test_regist2.jsp").forward(req,res);
+		req.getRequestDispatcher("test_regist.jsp").forward(req,res);
 		}
 	}
