@@ -82,8 +82,16 @@
 								<td>${test.student.name}</td>
 								<td><input type="number" name="point_${test.student.no}" min=0 max=100 <c:if test="${test.point != -1}"> value="${test.point}"</c:if>></td>
 							</tr>
+							<!-- 登録する学生番号を一覧として送る -->
+							<input type="hidden" name="student_no_set[]" value="${test.student.no}"/>
 						</c:forEach>
 					</table>
+					<input type="hidden" id="test-subject_cd-hidden" name="subject_cd" value="${subject.cd}"/>
+					<input type="hidden" id="test-num-hidden" name="num" value="${num}" />
+					<input type="hidden" id="test-f1-hidden" name="f1" value="${f1}" />
+					<input type="hidden" id="test-f2-hidden" name="f2" value="${f2}" />
+					<input type="hidden" id="test-f3-hidden" name="f3" value="${f3}" />
+					<input type="hidden" id="test-f4-hidden" name="f4" value="${f4}" />
 					<input type="submit" value="登録して終了">
 				</c:when>
 				<c:otherwise>
